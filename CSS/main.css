@@ -1,0 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap");
+:root {
+  --textcolor: #2f4858;
+  --Pr-color: #ebcd06;
+  --Pr-color2: #ffdd00;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-size: 1.2rem;
+  font-family: Helvetica, sans-serif;
+}
+body {
+  overflow-y: overlay;
+  background-color: white;
+  min-height: 100vh;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+::-webkit-scrollbar-track {
+  border: 0.2rem solid black;
+  background: #000000;
+  box-shadow: 0 0 2.5px 2px rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(100, 100, 100);
+  border-radius: 1rem;
+}
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.load {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.load::before,
+.load:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.load:before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #000000 0%, #ffdd00 100%);
+  animation: spin 0.5s infinite linear;
+}
+.load:after {
+  width: 90%;
+  height: 90%;
+  background-color: #151515;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+p,
+li {
+  color: var(--textcolor);
+  line-height: 1.5em;
+}
+section:nth-child(1n + 3) {
+  padding-bottom: 3em 0;
+}
+
+nav {
+  height: max(4.5em, 9vh);
+  background: black;
+}
+.nav-links,
+.nav-links-bot {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+}
+.nav-links-bot {
+  width: 100%;
+}
+.nav-links li a,
+.nav-links-bot li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.7rem;
+}
+.nav-links li a:hover,
+.nav-links-bot li a:hover {
+  color: var(--Pr-color);
+  transition: ease-in-out 300ms;
+}
+.activ {
+  border-color: var(--Pr-color);
+}
+nav li {
+  /*
+Experimental
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  */
+  line-height: 1.25em;
+}
+nav li a {
+  /*
+Experimental
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  */
+  border-bottom: 0.125em solid transparent;
+}
+*/ header {
+  height: max(5em, 10vh);
+}
+.logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max(5em, 10vh);
+  z-index: 3;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.logo img {
+  width: auto;
+  height: max(4em, 8vh);
+  z-index: 3;
+}
+
+.landingtext {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 90vh;
+
+  text-align: center;
+  position: absolute;
+  padding: 2vh 0;
+  font-family: "Akaya Telivigala", cursive;
+}
+.landingtext * {
+  font-weight: bold;
+  color: var(--Pr-color2);
+}
+.landing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.land-title {
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  margin: 0;
+}
+
+.splitter {
+  display: flex;
+  flex-flow: row wrap;
+}
+.split-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 45%;
+  margin: 0 2.5%;
+}
+.News {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+  gap: 2em;
+  place-items: start;
+  justify-content: space-around;
+}
+.News .item {
+  padding: 0em 1em;
+  max-width: 70ch;
+}
+.masterimg {
+  max-width: 100%;
+  margin: 2em 0;
+}
+h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+h2,
+h3 {
+  color: #151515;
+  font-size: 1rem;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 1.65rem;
+  color: #000;
+  font-weight: 700;
+}
+p + p {
+  margin: 0.5em 0;
+}
+.list {
+  margin: 0.25em 1.5em;
+}
+
+.main {
+  padding: 1.5em 0;
+  width: 80vw;
+  margin: 0 auto;
+}
+.main + .main {
+  border-top: 0.14em dashed dimgray;
+}
+
+.botnav {
+  margin-top: 5em;
+}
+.vert {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+.daten {
+  width: 50%;
+  margin: 0 auto;
+}
+a:visited {
+  color: var(--Pr-color);
+}
+.creat {
+  text-align: center;
+  width: 100%;
+  background-color: black;
+  color: rgb(172, 172, 172);
+  padding: 1em;
+}
+.sponsoren ul {
+  list-style: none;
+}
+.spon-title {
+  font-size: 3em;
+  width: 100%;
+  text-align: center;
+}
+.splitter {
+  justify-content: space-around;
+  align-items: center;
+}
+.splitter-div {
+  flex-shrink: 0;
+  flex-basis: 25%;
+  height: auto;
+  margin: 2em 2em;
+  padding: 1em;
+  background: rgb(231, 231, 231);
+  border-radius: 20px;
+}
+.splitter-div img {
+  width: 100%;
+}
+
+.landSlide img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+  margin: 0;
+}
+h2 {
+  font-size: 1.75rem;
+  color: #000;
+  font-weight: 900;
+}
+.list {
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+.uls {
+  text-align: left;
+  margin: 0 1em;
+  list-style: none;
+}
+.split-div,
+.vert {
+  align-self: start;
+}
+.split-div {
+  text-align: left;
+  align-items: flex-start;
+}
+.split-text h3 {
+  padding: 0 0 0 0.25em;
+}
+iframe {
+  max-width: 100%;
+}
+.map {
+  max-width: 100%;
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.row ul {
+  margin-bottom: 1em;
+}
+ol {
+  margin: 1em;
+}
+ol ul {
+  list-style: none;
+  margin-top: 0.5em;
+}
+span.quell {
+  display: block;
+  margin-top: 3em;
+  font-size: 0.8rem;
+}
+.gal-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  place-items: center;
+}
+.gal-item {
+  max-width: 100%;
+  transition: all ease-in 300ms;
+}
+.gal-item:hover {
+  transform: scale(1.05);
+  transition: all ease-in 300ms;
+}
+.gal-item img {
+  aspect-ratio: 16/9;
+  max-width: 100%;
+  object-fit: cover;
+}
+.gal-item a {
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background: rgb(53, 53, 53);
+  padding: 1em 1.8em;
+  border-radius: 100px;
+}
+.atem {
+  font-size: 1.1em;
+  margin: 1em;
+}
+.atem:visited {
+  color: white;
+}
+.atem:hover {
+  filter: brightness(1.3);
+}
+.section__title {
+  margin-bottom: 0.5em;
+}
+.sub {
+  margin-bottom: 0.2em;
+}
+.sub + h2 {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  font-size: 1.2em;
+}
+
+/*Small screen CSS*/
+@media screen and (max-width: 1000px) {
+  /*Hamburgermenu */
+  .line {
+    width: 2em;
+    height: 0.3em;
+    background: white;
+    margin: 0.4em;
+  }
+  nav {
+    position: relative;
+  }
+  .Hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    z-index: 3;
+    transform: translate(-5%, -50%);
+  }
+  .nav-links {
+    position: fixed;
+    background: black;
+    height: 100vh;
+    width: 100%;
+    flex-flow: column;
+    clip-path: circle(100px at 90% -50%);
+    -webkit-clip-path: circle(100px at 90% -50%);
+    transition: all 800ms ease-out;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .nav-links.open {
+    clip-path: circle(2550px at 90% -10%);
+    -webkit-clip-path: circle(2550px at 90% -10%);
+    pointer-events: all;
+    background: rgb(24, 24, 24);
+  }
+  .botnav nav {
+    height: auto;
+    min-height: 10vh;
+  }
+  .nav-links-bot {
+    padding: 1em 0;
+    margin: 1em 0 0 0;
+    height: 100%;
+    flex-flow: column;
+  }
+  .nav-link-bot {
+    line-height: 2em;
+  }
+  .scroll-lock {
+    overflow: hidden;
+  }
+  /*Layout*/
+  html {
+    font-size: 1rem;
+  }
+  .main {
+    width: 90vw;
+  }
+  .splitter {
+    flex-flow: column;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* footbar on Desktop */
+  .main:last-child {
+    padding-bottom: 10em;
+  }
+
+  .wrap {
+    position: relative;
+    min-height: 100vh;
+  }
+  .botnav {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
+}

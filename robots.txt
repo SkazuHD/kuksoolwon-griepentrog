@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /files/
+Disallow: /images/*SP*
+
+Sitemap: https://www.kuk-sool-won-griepentrog.de/sitemap.xml
